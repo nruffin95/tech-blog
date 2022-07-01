@@ -1,0 +1,3 @@
+CREATE DATABASE blog_db;
+
+USE DATABASE blog_db;

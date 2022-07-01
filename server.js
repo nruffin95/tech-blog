@@ -5,6 +5,7 @@ const exphbs = require("express-handlebars");
 const hbs = exphbs.create({});
 const path = require("path");
 const routes = require("./controllers");
+const sequelize = require("./config/connection");
 
 //Handlebars
 app.set('view engine', 'handlebars')
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
     res.render('index', {articles: articles})
 })
 
-// Port listening for server
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`)
+//turn on connection to db and server
+sequelize.sync({force: true}).then(()=>{
+  app.listen(PORT,() =>console.log('Now Listening'))
 })
