@@ -18,9 +18,9 @@
       <td>{{this.description}}</td>
       <td>{{this.markdown}}</td>
       <td>
-        <a class="btn btn-primary" href="#">View</a>
-        <a class="btn btn-success" href="#">Edit</a>
-        <a class="btn btn-danger" href="#">Delete</a>
+        <a class="btn btn-primary" href="/post/{{this.id}}">View</a>
+        <a class="btn btn-success" href="/edit/{{this.id}}">Edit</a>
+        <a class="btn btn-danger" href="/delete/{{this.id}}">Delete</a>
       </td>
     </tr>
     {{/each}}
