@@ -16,19 +16,17 @@ class Articles extends Model {}
       title: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       description: {
         type: DataTypes.STRING,
         allowNull: true,
+        unique: true,
       },
       markdown: {
         type: DataTypes.STRING,
         allowNull: true,
-      },
-      createdAT: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: Date.now,
+        unique: true,
       },
     },
     {
@@ -36,7 +34,7 @@ class Articles extends Model {}
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: "Articles",
+      modelName: "Post",
     }
   );
   
