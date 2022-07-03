@@ -11,16 +11,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    {{#each posts}}
+        <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.title}}</td>
+      <td>{{this.description}}</td>
+      <td>{{this.markdown}}</td>
       <td>
         <a class="btn btn-primary" href="#">View</a>
         <a class="btn btn-success" href="#">Edit</a>
         <a class="btn btn-danger" href="#">Delete</a>
       </td>
     </tr>
+    {{/each}}
   </tbody>
 </table>

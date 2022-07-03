@@ -7,7 +7,10 @@ const Post = require("../models/Post");
 // });
 
 const allPost = async (req, res) => {
-  await res.render('home')
+  const posts = await Post.findAll({
+    raw:true
+  }).catch(error => console.log(error))
+  await res.render('home', {posts})
 }
 
 const postForm = async (req, res) => {
@@ -21,9 +24,8 @@ const saveForm = async (req, res) => {
     markdown: markdown
   }).catch(error => console.log(error));
   console.log(post)
-
-  res.redirect('/')
-  await res.render('create')
+  
+  await res.redirect('/')
 }
 
 module.exports = { allPost, postForm, saveForm };

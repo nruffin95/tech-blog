@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { allPost, postForm, saveForm } = require("./UserController");
 
-router.get("/post", allPost);
+router.get("/", allPost);
 router.get("/create", postForm);
 router.post("/create", saveForm);
 
