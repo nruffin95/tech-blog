@@ -16,6 +16,7 @@ const allPost = async (req, res) => {
 const postForm = async (req, res) => {
   await res.render('create')
 }
+
 const saveForm = async (req, res) => {
   const {title, description, markdown} = await req.body;
   const post = await Post.create({
